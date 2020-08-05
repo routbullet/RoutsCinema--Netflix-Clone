@@ -6,6 +6,11 @@ import axios from "../Axios";
 const Main = styled.div`
   margin: 0;
 `;
+
+const TitleHeadings = styled.h1`
+  display: flex;
+  justify-content: center;
+`;
 const PosterContainer = styled.div`
   display: flex;
   overflow-x: scroll;
@@ -39,7 +44,7 @@ const Rows = ({ title, fetchingUrl }) => {
 
   return (
     <Main>
-      <h1>{title}</h1>
+      <TitleHeadings>{title}</TitleHeadings>
 
       <PosterContainer>
         {movies__list.map((movie) => (

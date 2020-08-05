@@ -2,9 +2,15 @@
 import React from "react";
 import Requests from "./Requests";
 import Rows from "./components/Rows.js";
+
+import { GlobalStyles } from "./globalStyle";
+
+// styling through styled-components
+
 function App() {
   return (
     <div>
+      <GlobalStyles />
       <h1>BRDB (Netflix-Clone)</h1>
 
       <Rows
