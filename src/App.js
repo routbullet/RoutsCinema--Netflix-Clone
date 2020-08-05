@@ -5,7 +5,7 @@ import Rows from "./components/Rows.js";
 function App() {
   return (
     <div>
-      <h1>BRDB (Netfix-Clone)</h1>
+      <h1>BRDB (Netflix-Clone)</h1>
 
       <Rows
         title="Trending Now"
