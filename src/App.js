@@ -8,8 +8,11 @@ function App() {
       <h1>BRDB (Netflix-Clone)</h1>
 
       <Rows
+        //This is row title name
         title="Trending Now"
+        //getting fetch url from Requests object
         fetchingUrl={Requests.fetchTrending}
+        //providing a unique key because Key {key='TN'} helps to React identify which items have changed, are added, or are removed.
         key="TN"
       />
       <Rows title="Top Rated" fetchingUrl={Requests.fetchTopRated} key="TR" />

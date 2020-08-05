@@ -1,5 +1,7 @@
+//API KEY from https://www.themoviedb.org/
 const API__KEY = "b9605fd8dc74acac2947e1ed0e2aefb6";
 
+//This is a fetching url from https://developers.themoviedb.org/3/getting-started/introduction.
 const Requests = {
   fetchTrending: `/trending/all/day?api_key=${API__KEY}`,
   fetchTopRated: `/movie/top_rated?api_key=${API__KEY}&language=en-US`,
