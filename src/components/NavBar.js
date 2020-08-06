@@ -1,11 +1,32 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from "react";
+import "./Navbar.css";
+import logo from "../image/logo.svg";
 
-const Main = styled.div`
-  background-color: #322f3d;
-  heigth: 20vh;
-`;
-
-export const NavBar = () => {
-  return <Main>Netflix App</Main>;
+const NavBar = () => {
+  const [displayNav, setDisplayNav] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      window.scrollY > 120 ? setDisplayNav(true) : setDisplayNav(false);
+    });
+    return () => {
+      window.removeEventListener("scroll");
+    };
+  }, []);
+  return (
+    <div className={`navbar ${displayNav && "navbar-bg"}`}>
+      <div style={{ paddingTop: "7px" }}>
+        <img
+          style={{
+            position: "relative",
+            height: "125px",
+            width: "100%",
+            objectFit: "contain",
+          }}
+          src={logo}
+          alt=""
+        />
+      </div>
+    </div>
+  );
 };
+export default NavBar;

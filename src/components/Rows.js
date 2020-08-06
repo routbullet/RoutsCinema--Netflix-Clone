@@ -24,7 +24,9 @@ const PosterImage = styled.img`
 
   cursor: pointer;
   width: 100%;
-  max-height: 150px;
+  max-height: 170px;
+  border-radius: 0.3rem;
+  padding-right: 0.4rem;
   // transition: transform 430ms;
 `;
 
