@@ -49,9 +49,6 @@ const Rows = ({ title, fetchingUrl }) => {
       <PosterContainer>
         {movies__list.map((movie) => (
           <PosterImage
-            whileHover={{
-              scale: 1.2,
-            }}
             key={movie.id}
             src={`${TMDB_ImageUrl}${movie.poster_path}`}
             alt={movie.name}
