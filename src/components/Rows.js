@@ -25,10 +25,26 @@ const PosterImage = styled.img`
 
   cursor: pointer;
   width: 100%;
-  max-height: 170px;
+  max-height: 190px;
   border-radius: 0.3rem;
   padding-right: 0.4rem;
   // transition: transform 430ms;
+`;
+const Rowtopgradient = styled.div`
+  height: 2rem;
+  position: absolute;
+  width: 100%;
+
+  z-index: 2;
+  background-image: linear-gradient(360deg, transparent, #0d0c1d, #0d0c1d);
+`;
+const Rowbottomgradient = styled.div`
+  height: 2rem;
+  position: absolute;
+  width: 100%;
+  margin-top: -1.2rem;
+  z-index: 2;
+  background-image: linear-gradient(180deg, transparent, #0d0c1d, #0d0c1d);
 `;
 
 const Rows = ({ title, fetchingUrl }) => {
@@ -48,20 +64,18 @@ const Rows = ({ title, fetchingUrl }) => {
   return (
     <Main>
       <TitleHeadings>{title}</TitleHeadings>
-
+      <Rowtopgradient />
       <PosterContainer>
         {movies__list.map((movie) => (
           <PosterImage
-            key={movie.id}
+            key={`${movie.id}`}
             src={`${TMDB_ImageUrl}${movie.poster_path}`}
             alt={movie.name}
           />
         ))}
       </PosterContainer>
 
-      {/* {movies__list.map((movie) => (
-        <img src={movie.poster.path} alt={movie.title} />
-      ))} */}
+      <Rowbottomgradient />
     </Main>
   );
 };

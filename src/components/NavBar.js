@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
-import logo from "../image/logo.svg";
+// import logo from "../image/logo.svg";
 
 const NavBar = () => {
   const [displayNav, setDisplayNav] = useState(false);
@@ -15,7 +15,7 @@ const NavBar = () => {
   return (
     <div className={`navbar ${displayNav && "navbar-bg"}`}>
       <div style={{ paddingTop: "7px" }}>
-        <img
+        {/* <img
           style={{
             position: "relative",
             height: "125px",
@@ -24,7 +24,7 @@ const NavBar = () => {
           }}
           src={logo}
           alt=""
-        />
+        /> */}
       </div>
     </div>
   );

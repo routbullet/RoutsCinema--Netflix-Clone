@@ -4,10 +4,7 @@ import Requests from "./Requests";
 import Rows from "./components/Rows.js";
 import AppBanner from "./components/AppBanner";
 import NavBar from "./components/NavBar";
-
 import { GlobalStyles } from "./globalStyle";
-
-// styling through styled-components
 
 function App() {
   return (
