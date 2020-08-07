@@ -10,6 +10,7 @@ const Main = styled.div`
 const TitleHeadings = styled.h1`
   display: flex;
   justify-content: center;
+  text-shadow: 5px 5px 10px black;
 `;
 const PosterContainer = styled.div`
   display: flex;
@@ -41,7 +42,7 @@ const Rows = ({ title, fetchingUrl }) => {
     }
     fetchData();
   }, [fetchingUrl]);
-  console.table(movies__list);
+  console.log(movies__list);
   const TMDB_ImageUrl = "https://image.tmdb.org/t/p/original/";
 
   return (

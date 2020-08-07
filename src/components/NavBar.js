@@ -6,11 +6,11 @@ const NavBar = () => {
   const [displayNav, setDisplayNav] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      window.scrollY > 120 ? setDisplayNav(true) : setDisplayNav(false);
+      window.scrollY > 80 ? setDisplayNav(true) : setDisplayNav(false);
     });
-    return () => {
-      window.removeEventListener("scroll");
-    };
+    // return () => {
+    //   window.removeEventListener("scroll");
+    // };
   }, []);
   return (
     <div className={`navbar ${displayNav && "navbar-bg"}`}>

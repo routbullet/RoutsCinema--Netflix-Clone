@@ -12,10 +12,11 @@ import { GlobalStyles } from "./globalStyle";
 function App() {
   return (
     <div>
-      <NavBar />
-      <GlobalStyles />
-
       <AppBanner />
+
+      <NavBar />
+
+      <GlobalStyles />
 
       <Rows
         //This is row title name
