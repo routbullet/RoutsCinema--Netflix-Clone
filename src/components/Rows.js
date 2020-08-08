@@ -11,6 +11,8 @@ const TitleHeadings = styled.h1`
   display: flex;
   justify-content: center;
   text-shadow: 5px 5px 10px black;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 3.4px;
 `;
 const PosterContainer = styled.div`
   display: flex;

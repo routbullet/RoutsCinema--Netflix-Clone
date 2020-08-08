@@ -7,7 +7,8 @@ const BannerTitle = styled.h1`
   margin-top: 9rem;
   margin-left: 7.2rem;
   font-size: 3rem;
-
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 3.4px;
   text-shadow: 5px 5px 6px black;
   position: absolute;
   z-index: 2;
@@ -18,8 +19,9 @@ const BannerMovieOverview = styled.h2`
   width: 30%;
   height: 10.51rem;
   // overflow: hidden;
-  font-family: "Special Elite", cursive;
-  font-size: 1.3rem;
+  font-family: "Satisfy", cursive;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
   color: white;
 
   text-shadow: 6px 6px 6px black;
@@ -98,7 +100,7 @@ export default function AppBanner() {
 
   return (
     <div>
-      <BannerTitle key={banner.title || banner.id}>
+      <BannerTitle key={banner.id}>
         {banner?.original_title || banner?.title}
       </BannerTitle>
       <BannerMovieOverview>
