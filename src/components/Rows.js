@@ -68,7 +68,7 @@ const Rows = ({ title, fetchingUrl }) => {
       <PosterContainer>
         {movies__list.map((movie) => (
           <PosterImage
-            key={`${movie.id}`}
+            key={movie.id}
             src={`${TMDB_ImageUrl}${movie.poster_path}`}
             alt={movie.name}
           />
