@@ -30,7 +30,7 @@ const BannerMovieOverview = styled.h2`
 `;
 const PlayButton = styled.button`
   padding: 0.8rem;
-  margin-top: 22.3rem;
+  margin-top: 22.8rem;
   margin-left: 7.2rem;
   border-radius: 0.6rem;
   background: transparent;
@@ -44,7 +44,7 @@ const PlayButton = styled.button`
 const WishListButton = styled.button`
   padding: 0.8rem;
   border-radius: 0.6rem;
-  margin-top: 22.3rem;
+  margin-top: 22.8rem;
   font-family: "Libre Baskerville", serif;
   color: white;
   font-weight: 700;
@@ -100,7 +100,7 @@ export default function AppBanner() {
 
   return (
     <div>
-      <BannerTitle key={banner.id}>
+      <BannerTitle key={banner?.id}>
         {banner?.original_title || banner?.title}
       </BannerTitle>
       <BannerMovieOverview>
@@ -110,7 +110,7 @@ export default function AppBanner() {
       <WishListButton>Wish List</WishListButton>
 
       <Banner
-        key={banner.id}
+        key={banner?.id}
         src={`${TMDB_ImageUrl}${banner?.backdrop_path || banner?.poster_path}`}
         alt=""
       />

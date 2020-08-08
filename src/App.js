@@ -5,6 +5,7 @@ import Rows from "./components/Rows.js";
 import AppBanner from "./components/AppBanner";
 import NavBar from "./components/NavBar";
 import { GlobalStyles } from "./globalStyle";
+import ScrollTop from "./components/ScrollTop";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <NavBar />
 
       <GlobalStyles />
+      <ScrollTop />
 
       <Rows
         //This is row title name
