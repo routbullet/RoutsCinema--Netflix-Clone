@@ -16,9 +16,9 @@ const BannerTitle = styled.h1`
 const BannerMovieOverview = styled.h2`
   margin-top: 14rem;
   margin-left: 7.2rem;
-  width: 30%;
-  height: 10.51rem;
-  // overflow: hidden;
+  width: 40%;
+  height: 8.51rem;
+  overflow: hidden;
   font-family: "Satisfy", cursive;
   letter-spacing: 2px;
   font-size: 1.2rem;
@@ -28,30 +28,40 @@ const BannerMovieOverview = styled.h2`
   position: absolute;
   z-index: 2;
 `;
-const PlayButton = styled.button`
-  padding: 0.8rem;
+const ButtonTitle = styled.h1`
+  // font-family: "Bebas Neue", cursive;
+  letter-spacing: 1px;
+  font-size: 0.97rem;
+  color: white;
+
+  text-shadow: 6px 6px 6px black;
+
+  z-index: 1;
+`;
+const LeftButton = styled.button`
   margin-top: 22.8rem;
   margin-left: 7.2rem;
+
   border-radius: 0.6rem;
   background: transparent;
   position: absolute;
   color: white;
-  font-family: "Libre Baskerville", serif;
-  font-weight: 700;
+
+  font-weight: 300;
   box-shadow: 4px 1px 4px black;
   z-index: 2;
 `;
-const WishListButton = styled.button`
-  padding: 0.8rem;
+const RightListButton = styled.button`
   border-radius: 0.6rem;
+
   margin-top: 22.8rem;
-  font-family: "Libre Baskerville", serif;
+
   color: white;
-  font-weight: 700;
+  font-weight: 300;
   background: transparent;
   box-shadow: 4px 0px 4px black;
 
-  margin-left: 11.9rem;
+  margin-left: 17.9rem;
   position: absolute;
   z-index: 2;
 `;
@@ -79,7 +89,9 @@ export default function AppBanner() {
   const [banner, setBanner] = useState([]);
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(Requests.fetchUpcoming);
+      const request = await axios.get(
+        Requests.fetchUpcoming || Requests.fetchTrending
+      );
       setBanner(
         request.data.results[
           Math.round(Math.random() * request.data.results.length - 1)
@@ -100,14 +112,20 @@ export default function AppBanner() {
 
   return (
     <div>
-      <BannerTitle key={banner?.id}>
-        {banner?.original_title || banner?.title}
+      <BannerTitle key="BT">
+        {banner?.original_title || banner?.title || banner?.original_name}
       </BannerTitle>
       <BannerMovieOverview>
         {ReadLess(banner?.overview, 160)}
       </BannerMovieOverview>
-      <PlayButton>Play</PlayButton>
-      <WishListButton>Wish List</WishListButton>
+      <LeftButton>
+        <ButtonTitle>Release Date</ButtonTitle>
+        <ButtonTitle>{banner?.release_date}</ButtonTitle>
+      </LeftButton>
+      <RightListButton>
+        <ButtonTitle>Rating</ButtonTitle>
+        <ButtonTitle>{banner?.vote_average} / 10</ButtonTitle>
+      </RightListButton>
 
       <Banner
         key={banner?.id}
