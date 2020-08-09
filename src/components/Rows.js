@@ -24,10 +24,10 @@ const PosterContainer = styled.div`
 
 const PosterImage = styled.img`
   object-fit: contain;
-
+  margin-top: -1.3rem;
   cursor: pointer;
   width: 100%;
-  max-height: 190px;
+  max-height: 250px;
   border-radius: 0.3rem;
   padding-right: 0.4rem;
   // transition: transform 430ms;
