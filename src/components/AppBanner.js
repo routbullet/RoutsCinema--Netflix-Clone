@@ -39,22 +39,25 @@ const ButtonTitle = styled.h1`
   z-index: 1;
 `;
 const LeftButton = styled.button`
-  margin-top: 22.8rem;
+  margin-top: 23.5rem;
   margin-left: 7.2rem;
 
   border-radius: 0.6rem;
   background: transparent;
   position: absolute;
   color: white;
-
+  width: 140px;
   font-weight: 300;
   box-shadow: 4px 1px 4px black;
   z-index: 2;
+  display: block;
 `;
 const RightListButton = styled.button`
   border-radius: 0.6rem;
+  width: 140px;
 
-  margin-top: 22.8rem;
+  margin-top: 23.5rem;
+  display: block;
 
   color: white;
   font-weight: 300;
@@ -115,15 +118,16 @@ export default function AppBanner() {
       <BannerTitle key="BT">
         {banner?.original_title || banner?.title || banner?.original_name}
       </BannerTitle>
-      <BannerMovieOverview>
+      <BannerMovieOverview key="BO">
         {ReadLess(banner?.overview, 160)}
       </BannerMovieOverview>
+
       <LeftButton>
         <ButtonTitle>Release Date</ButtonTitle>
-        <ButtonTitle>{banner?.release_date}</ButtonTitle>
+        <ButtonTitle key="BD">{banner?.release_date}</ButtonTitle>
       </LeftButton>
       <RightListButton>
-        <ButtonTitle>Rating</ButtonTitle>
+        <ButtonTitle key="BR">Rating</ButtonTitle>
         <ButtonTitle>{banner?.vote_average} / 10</ButtonTitle>
       </RightListButton>
 
